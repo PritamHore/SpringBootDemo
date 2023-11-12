@@ -3,6 +3,8 @@ package com.pritam.app.entity;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,6 +16,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
+@Component
 @Table(name = "User")
 @Getter
 @Setter
