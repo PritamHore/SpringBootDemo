@@ -24,7 +24,7 @@ public class UserController {
 		int id = userService.createUser(userDto);
 		System.out.println("01");
 		return new GlobalResDto(id,"User Created Successfully.");
-		
+		 
 	}
 	
 }
