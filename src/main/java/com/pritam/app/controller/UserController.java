@@ -27,9 +27,4 @@ public class UserController {
 		
 	}
 	
-	@GetMapping(value = "/hi")
-	public void hi() {
-		System.out.println("hi");
-	}
-	
 }
