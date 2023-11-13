@@ -10,7 +10,7 @@ public class TestController {
 	
 	@GetMapping("/status")
 	public String test() {
-		return "working.........";
+		return "working........";
 	}
 	
 }
