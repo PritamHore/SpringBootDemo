@@ -20,11 +20,8 @@ public class UserController {
 	
 	@PostMapping(value = "/create")
 	public GlobalResDto createUser(@RequestBody UserDto	 userDto){
-		System.out.println("00");
 		int id = userService.createUser(userDto);
-		System.out.println("01");
 		return new GlobalResDto(id,"User Created Successfully.");
-		 
 	}
 	
 }
