@@ -1,2 +1,2 @@
 # SpringBootDemo
-Kindly create a database schema 'my-works'
+Kindly create a database schema 'myWorks'
