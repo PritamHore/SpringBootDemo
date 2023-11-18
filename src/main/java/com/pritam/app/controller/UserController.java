@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,20 +25,20 @@ public class UserController {
 	private UserService userService;
 	
 	@PostMapping(value = "/create")
-	public GlobalResDto createUser(@RequestBody UserDto	 userDto){
+	public ResponseEntity<GlobalResDto> createUser(@RequestBody UserDto	 userDto){
 		int id = userService.createUser(userDto);
-		return new GlobalResDto(id,"User Created Successfully.");
+		return ResponseEntity.ok(new GlobalResDto(id,"User Created Successfully."));
 	}
 	
 	@GetMapping(value = "/users")
-	public List<UserEntity> fetchUsers() {
-		return userService.fetchAllUsers();
+	public ResponseEntity<List<UserEntity>> fetchUsers() {
+		return ResponseEntity.ok(userService.fetchAllUsers());
 	}
 	
 	@GetMapping(value = "/user/{id}")
-	public Optional<UserEntity> fetchUserById(@PathVariable("id") Integer id) {
+	public ResponseEntity<Optional<UserEntity>> fetchUserById(@PathVariable("id") Integer id) {
 	
-		return userService.fetchUserById(id);
+		return ResponseEntity.ok(userService.fetchUserById(id));
 	}
 	
 }
