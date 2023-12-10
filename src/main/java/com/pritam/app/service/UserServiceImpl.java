@@ -2,12 +2,15 @@ package com.pritam.app.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pritam.app.dto.UserDto;
+import com.pritam.app.entity.MasterRole;
 import com.pritam.app.entity.UserEntity;
+import com.pritam.app.repo.RoleRepo;
 import com.pritam.app.repo.UserRepo;
 
 @Service
@@ -17,10 +20,15 @@ public class UserServiceImpl implements UserService{
 	private UserRepo userRepo;
 	
 	@Autowired
+	private RoleRepo roleRepo;
+	
+	@Autowired
 	private UserEntity userEntity;
 	
 	@Override
 	public int createUser(UserDto userDto) {
+		
+//		Set<MasterRole> role =roleRepo.findByName(userDto.getRole());
 		
 		userEntity.setFirstName(userDto.getFirstName());
 		userEntity.setLastName(userDto.getLastName());
@@ -46,6 +54,4 @@ public class UserServiceImpl implements UserService{
 		return userRepo.findById(id);
 	}
 	
-	
-
 }

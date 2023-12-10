@@ -18,7 +18,7 @@ import com.pritam.app.entity.UserEntity;
 import com.pritam.app.service.UserService;
 
 @RestController
-@RequestMapping("api/user")
+@RequestMapping("api/v1/user")
 public class UserController {
 
 	@Autowired 
